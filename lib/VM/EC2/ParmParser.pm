@@ -179,7 +179,7 @@ sub block_device_parm {
 	}
 	elsif ($blockdevice eq 'none') {
 	    push @p,("$argname.$c.NoDevice" => '');
-	} elsif ($blockdevice =~ /^ephemeral\d$/) {
+	} elsif ($blockdevice =~ /^ephemeral\d+$/) {
 	    push @p,("$argname.$c.VirtualName"=>$blockdevice);
 	} else {
 	    my ($snapshot,$size,$delete_on_term,$vtype,$iops) = split ':',$blockdevice;
